@@ -15,6 +15,7 @@
 	<description>Demo project for retry mechanism with quartz</description>
 	<properties>
 		<java.version>17</java.version>
+		<flyway-maven-plugin.version>8.5.13</flyway-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,6 +37,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -50,6 +55,16 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>${flyway-maven-plugin.version}</version>
+				<configuration>
+					<configFiles>
+						<configFile>flyway-local.conf</configFile>
+					</configFiles>
 				</configuration>
 			</plugin>
 		</plugins>
