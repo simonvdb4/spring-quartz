@@ -19,8 +19,6 @@ spring:
     show-sql: true
 server:
   port: 8080
-  servlet:
-    contextPath: /poc
 management:
   endpoint.health.show-details: always
   endpoints:
