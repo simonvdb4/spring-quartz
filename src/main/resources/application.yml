@@ -21,3 +21,10 @@ server:
   port: 8080
   servlet:
     contextPath: /poc
+management:
+  endpoint.health.show-details: always
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
