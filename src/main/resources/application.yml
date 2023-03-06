@@ -17,6 +17,10 @@ spring:
       hibernate:
         default_schema: SCH_POC
     show-sql: true
+  quartz:
+    jdbc:
+      initialize-schema: never
+    job-store-type: jdbc
 server:
   port: 8080
 management:
@@ -26,3 +30,8 @@ management:
       base-path: /
       exposure:
         include: "*"
+service:
+  quartz:
+    retries:
+      repeat-count: 3
+      interval: 60
