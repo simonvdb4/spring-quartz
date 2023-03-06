@@ -1,1 +1,23 @@
-
+spring:
+  application:
+    name: poc
+  datasource:
+    driver-class-name: "oracle.jdbc.OracleDriver"
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    password: SCH_POC
+    username: SCH_POC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    table: SCHEMA_VERSION
+    baseline-on-migrate: false
+    schema: SCH_POC
+  jpa:
+    properties:
+      hibernate:
+        default_schema: SCH_POC
+    show-sql: true
+server:
+  port: 8080
+  servlet:
+    contextPath: /poc
