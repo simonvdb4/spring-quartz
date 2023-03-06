@@ -1,0 +1,11 @@
+CREATE TABLE REPERTORIUM_ACTIE_RETRY
+(
+    UUID                            VARCHAR2(36 char),
+    REPERTORIUM_ACTIE				CLOB,
+    REPERTORIUM_ACTIE_ERROR			CLOB NULL
+);
+
+COMMENT ON TABLE REPERTORIUM_ACTIE_RETRY IS 'Tabel met repertorium acties die opnieuw extern uitgevoerd moeten worden voor een insz labeltijdslijn';
+COMMENT ON COLUMN REPERTORIUM_ACTIE_RETRY.UUID IS 'De UUID (PK)';
+COMMENT ON COLUMN REPERTORIUM_ACTIE_RETRY.REPERTORIUM_ACTIE IS 'De actie als JSON CLOB';
+COMMENT ON COLUMN REPERTORIUM_ACTIE_RETRY.REPERTORIUM_ACTIE_ERROR IS 'Error die optrad tijdens het uitvoeren van de repertorium actie';
