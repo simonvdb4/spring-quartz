@@ -16,7 +16,7 @@ spring:
     properties:
       hibernate:
         default_schema: SCH_POC
-    show-sql: true
+    show-sql: true # temporary added!
   quartz:
     jdbc:
       initialize-schema: never
